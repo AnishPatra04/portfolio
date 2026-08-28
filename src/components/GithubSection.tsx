@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Star, GitFork, BookOpen, Calendar, Circle } from "lucide-react";
 import { GithubIcon } from "./Icons";
@@ -67,10 +67,22 @@ const generateMockContributions = () => {
   return grid;
 };
 
-const CONTRIBUTION_GRID = generateMockContributions();
+const generateEmptyContributions = () => {
+  const grid = [];
+  for (let i = 0; i < 28; i++) {
+    const col = Array(7).fill(0);
+    grid.push(col);
+  }
+  return grid;
+};
 
 export default function GithubSection() {
   const [hoveredCell, setHoveredCell] = useState<{ col: number; row: number } | null>(null);
+  const [contributionGrid, setContributionGrid] = useState<number[][]>(() => generateEmptyContributions());
+
+  useEffect(() => {
+    setContributionGrid(generateMockContributions());
+  }, []);
 
   const getCellColor = (level: number) => {
     switch (level) {
@@ -173,7 +185,7 @@ export default function GithubSection() {
 
             {/* Matrix board */}
             <div className="flex gap-[3.5px] overflow-x-auto pb-2 scrollbar-thin select-none">
-              {CONTRIBUTION_GRID.map((col, colIdx) => (
+              {contributionGrid.map((col, colIdx) => (
                 <div key={colIdx} className="flex flex-col gap-[3.5px]">
                   {col.map((level, rowIdx) => (
                     <div

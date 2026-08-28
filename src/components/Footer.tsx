@@ -38,11 +38,31 @@ export default function Footer() {
     <footer className="border-t border-zinc-200 dark:border-zinc-900 bg-zinc-50 dark:bg-zinc-950/40 select-none py-12 px-6 sm:px-12 font-sans relative">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         {/* Name and Copy */}
-        <div className="text-center md:text-left space-y-1">
-          <p className="text-sm font-bold text-zinc-900 dark:text-zinc-50">Anish Kumar Patra</p>
-          <p className="text-[11px] text-zinc-500 font-mono">
-            &copy; {new Date().getFullYear()} &bull; Made with ❤️
-          </p>
+        <div className="flex flex-col items-center md:items-start gap-3">
+          <div className="text-center md:text-left space-y-1">
+            <p className="text-sm font-bold text-zinc-900 dark:text-zinc-50">Anish Kumar Patra</p>
+            <p className="text-[11px] text-zinc-500 font-mono">
+              &copy; {new Date().getFullYear()} &bull; Made with ❤️
+            </p>
+          </div>
+          
+          <a
+            href="https://internship.flyrank.ai/verify?id=FR-D1-0E9D4-CDEB5&first_name=Anish"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2.5 px-3 py-1.5 rounded-lg border border-emerald-500/20 bg-emerald-500/5 hover:bg-emerald-500/10 hover:border-emerald-500/40 transition-all focus:outline-none clickable select-none"
+            title="Verify FlyRank Internship Credential"
+          >
+            <div className="flex items-center justify-center w-4 h-4 rounded-full bg-emerald-500 text-white shrink-0">
+              <svg className="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3.5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <div className="text-left leading-none">
+              <p className="text-[10px] uppercase tracking-wider font-bold text-emerald-600 dark:text-emerald-450 leading-none">FlyRank Verified</p>
+              <p className="text-[8px] font-mono text-zinc-500 dark:text-zinc-400 mt-1 leading-none">ID: FR-D1-0E9D4-CDEB5</p>
+            </div>
+          </a>
         </div>
 
         {/* Quick Nav Links */}

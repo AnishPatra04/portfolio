@@ -78,15 +78,18 @@ export default function Contact() {
               </div>
 
               {/* Email Card */}
-              <div className="flex items-center gap-4 text-zinc-700 dark:text-zinc-300">
-                <div className="p-3 bg-white dark:bg-zinc-900 border border-zinc-200/50 dark:border-zinc-800/50 rounded-xl">
+              <a
+                href="mailto:patraanish43@gmail.com"
+                className="flex items-center gap-4 text-zinc-700 dark:text-zinc-300 hover:text-indigo-500 dark:hover:text-indigo-400 group transition-colors clickable"
+              >
+                <div className="p-3 bg-white dark:bg-zinc-900 border border-zinc-200/50 dark:border-zinc-800/50 rounded-xl group-hover:border-indigo-500/30 transition-colors">
                   <Mail className="w-5 h-5 text-indigo-500" />
                 </div>
                 <div>
                   <p className="text-[10px] font-mono font-bold uppercase tracking-wider text-zinc-400">Email Address</p>
-                  <p className="text-xs sm:text-sm font-semibold">anishpatra.work@gmail.com</p>
+                  <p className="text-xs sm:text-sm font-semibold">patraanish43@gmail.com</p>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
 
